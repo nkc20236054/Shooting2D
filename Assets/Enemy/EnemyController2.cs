@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController2 : MonoBehaviour
 {
     Vector3 dir = Vector3.zero;
     float speed = 5;
 
     void Start()
     {
-        Destroy(gameObject,4f);
+        Destroy(gameObject,6f);
     }
     
     void Update()
     {
         dir = Vector3.left;
+        dir.y = Mathf.Sin(Time.time * 5f);
         
         transform.position += dir.normalized * speed * Time.deltaTime;
     }
