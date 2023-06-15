@@ -14,5 +14,9 @@ public class ShotController : MonoBehaviour
     void Update()
     {
         transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
+        if(gameObject.transform.position.x >= 9)
+        {
+            Destroy(gameObject);
+        }
     }
 }

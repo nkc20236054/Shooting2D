@@ -17,7 +17,6 @@ public class ShotGenerator : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             createPosition = transform.position;
-            createPosition.x += 0.5f;
             Instantiate(MyShotPrefab, createPosition,Quaternion.Euler(0,0,270));
         }
     }

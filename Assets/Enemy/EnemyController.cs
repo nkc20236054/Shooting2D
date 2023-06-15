@@ -6,10 +6,12 @@ public class EnemyController : MonoBehaviour
 {
     Vector3 dir = Vector3.zero;
     float speed = 5;
+    Animator anim;
 
     void Start()
     {
         Destroy(gameObject,4f);
+        anim = GetComponent<Animator>();
     }
     
     void Update()
@@ -21,8 +23,15 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameDirector.lastTime -= 10f;
-
-        Destroy(gameObject);
+        if (collision.CompareTag("Shot"))
+        {
+            Destroy(gameObject);
+            anim.SetTrigger("explosion");
+        }
+        if (collision.CompareTag("Player"))
+        {
+            GameDirector.lastTime -= 10f;
+            Destroy(gameObject);
+        }
     }
 }
