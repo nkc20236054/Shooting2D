@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     Vector3 dir = Vector3.zero;
     float speed = 5;
     Animator anim;
+    public GameObject explosionPre;
 
     void Start()
     {
@@ -25,8 +26,9 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.CompareTag("Shot"))
         {
+            Instantiate(explosionPre, transform.position, Quaternion.identity);//”š”j•\Ž¦
+            Destroy(collision.gameObject);
             Destroy(gameObject);
-            anim.SetTrigger("explosion");
         }
         if (collision.CompareTag("Player"))
         {
