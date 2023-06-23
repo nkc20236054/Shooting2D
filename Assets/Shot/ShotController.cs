@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class ShotController : MonoBehaviour
 {
-    public float MoveSpeed = 20.0f;
+    float speed;
 
     void Start()
     {
-
+        speed = 10f;             // ’e‘¬“x
+        Destroy(gameObject, 2f); // õ–½‚Q•b
     }
 
     void Update()
     {
-        transform.Translate(0, MoveSpeed * Time.deltaTime, 0);
-        if(gameObject.transform.position.x >= 9)
+        // ˆÚ“®
+        transform.position += transform.up * speed * Time.deltaTime;
+    }
+
+    // d‚È‚è”»’è
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        // d‚È‚Á‚½‘Šè‚Ìƒ^ƒO‚ªyEnemyz‚¾‚Á‚½‚ç
+        if (c.tag == "Enemy")
         {
+            // ©’eíœ
             Destroy(gameObject);
         }
     }
 }
+
