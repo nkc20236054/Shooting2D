@@ -1,10 +1,7 @@
-//----------------------------------------------------------------------------------------
-// 科目：ゲームプログラミング
-// 内容：敵制御スクリプト
-// 担当：Ken.D.Ohishi 2023.06.06
-//----------------------------------------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -18,6 +15,7 @@ public class EnemyController : MonoBehaviour
     float shotTime;             // 弾の発射間隔計算用
     float shotInterval = 2f;    // 弾の発射間隔
     GameDirector gd;            // GameDirectorコンポーネントを保存
+    public static int cnt;
 
     void Start()
     {
@@ -72,6 +70,8 @@ public class EnemyController : MonoBehaviour
         // 重なった相手のタグが【PlayerShot】だったら
         if (other.tag == "PlayerShot")
         {
+            
+
             // 距離を増やす
             gd.Kyori += 200;
 
