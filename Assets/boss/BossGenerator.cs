@@ -15,7 +15,7 @@ public class BossGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameDirector.kyori == 20)
+        if (GameDirector.kyori % 10000 == 0)
         {
             Instantiate(BossPre, sporn, Quaternion.Euler(0, 0, 0)) ;
         }
