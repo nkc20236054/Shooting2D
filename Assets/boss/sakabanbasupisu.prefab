@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ExploPre: {fileID: 7426070780133827831, guid: 8a4d50020c5aa81479554fb00115ea7e, type: 3}
   ShotPre: {fileID: 6438448538233943114, guid: 143b9cd18d6c0ec43bbfd875826eb172, type: 3}
+  BossPre: {fileID: 3144972119286497945}

@@ -6,6 +6,8 @@ public class BossGenerator : MonoBehaviour
 {
     public GameObject BossPre;
     Vector3 sporn = Vector3.zero;
+    float span = 50;             // “G‚ðo‚·ŠÔŠui•bj
+    float delta = 0;            // ŽžŠÔŒvŽZ—p•Ï”\
 
     void Start()
     {
@@ -15,9 +17,12 @@ public class BossGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameDirector.kyori % 10000 == 0)
+        delta += Time.deltaTime; // Œo‰ßŽžŠÔ‚ðŒvŽZ
+        if (delta > span)
         {
-            Instantiate(BossPre, sporn, Quaternion.Euler(0, 0, 0)) ;
+            delta = 0;
+            GameObject go = Instantiate(BossPre) ;
+            go.transform.position = sporn ;
         }
     }
 }
